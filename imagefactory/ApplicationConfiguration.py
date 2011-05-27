@@ -86,10 +86,10 @@ class ApplicationConfiguration(object):
         group_push.add_argument('--credentials', help='Cloud provider credentials')
         group_warehouse = argparser.add_argument_group(title='Image Warehouse', description=warehouse_description)
         group_warehouse.add_argument('--warehouse', default='http://localhost:9090/', help='URL of the warehouse location to store images. (default: %(default)s)')
-        group_warehouse.add_argument('--image_bucket', help='Name of warehouse bucket to look in for images. (default: %(default)s)')
-        group_warehouse.add_argument('--template_bucket', help='Name of warehouse bucket to look in for templates. (default: %(default)s)')
-        group_warehouse.add_argument('--icicle_bucket', help='Name of warehouse bucket to look in for icicles. (default: %(default)s)')
-        group_warehouse.add_argument('--provider_bucket', help='Name of warehouse bucket to look in for provider image instances. (default: %(default)s)')
+        group_warehouse.add_argument('--image_bucket', default='images', help='Name of warehouse bucket to look in for images. (default: %(default)s)')
+        group_warehouse.add_argument('--template_bucket', default='templates', help='Name of warehouse bucket to look in for templates. (default: %(default)s)')
+        group_warehouse.add_argument('--icicle_bucket', default='icicles', help='Name of warehouse bucket to look in for icicles. (default: %(default)s)')
+        group_warehouse.add_argument('--provider_bucket', default='providers', help='Name of warehouse bucket to look in for provider image instances. (default: %(default)s)')
 
         return argparser
 
